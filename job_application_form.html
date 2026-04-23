@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>All Forms</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #f4f4f4;
+}
+.container {
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+}
+h2 {
+    text-align: center;
+}
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+}
+.inline {
+    width: auto;
+}
+button {
+    padding: 10px;
+    width: 100%;
+    background: #007bff;
+    color: white;
+    border: none;
+}
+</style>
+
+<script>
+function validatePassword() {
+    let p = document.getElementById("pass").value;
+    let c = document.getElementById("confirm").value;
+    if (p !== c) {
+        alert("Passwords do not match!");
+        return false;
+    }
+    return true;
+}
+</script>
+
+</head>
+<body>
+
+<!-- REGISTRATION FORM -->
+<div class="container">
+<h2>Registration Form</h2>
+
+<form onsubmit="return validatePassword()">
+
+<label>Full Name</label>
+<input type="text" name="fullname" placeholder="Enter your name" required>
+
+<label>Email</label>
+<input type="email" name="email" placeholder="Enter email" required>
+
+<label>Password</label>
+<input type="password" id="pass" required>
+
+<label>Confirm Password</label>
+<input type="password" id="confirm" required>
+
+<label>Gender</label><br>
+<input type="radio" name="gender" class="inline" required> Male
+<input type="radio" name="gender" class="inline"> Female
+
+<br><br>
+
+<label>Hobbies</label><br>
+<input type="checkbox" class="inline"> Reading
+<input type="checkbox" class="inline"> Sports
+<input type="checkbox" class="inline"> Music
+
+<br><br>
+
+<label>Date of Birth</label>
+<input type="date" required>
+
+<button type="submit">Submit</button>
+
+</form>
+</div>
+
+<!-- SURVEY FORM -->
+<div class="container">
+<h2>Survey Form</h2>
+
+<form>
+
+<label>User Name</label>
+<input type="text" placeholder="Enter name" required>
+
+<label>Feedback</label>
+<textarea placeholder="Write feedback" required></textarea>
+
+<label>Rating</label><br>
+<input type="radio" name="rate" class="inline" required> 1
+<input type="radio" name="rate" class="inline"> 2
+<input type="radio" name="rate" class="inline"> 3
+<input type="radio" name="rate" class="inline"> 4
+<input type="radio" name="rate" class="inline"> 5
+
+<br><br>
+
+<label>Favorite Technology</label>
+<select required>
+<option value="">Select</option>
+<option>AI</option>
+<option>Web Development</option>
+<option>Cloud</option>
+<option>Data Science</option>
+</select>
+
+<label>
+<input type="checkbox"> Subscribe
+</label>
+
+<button type="submit">Submit</button>
+
+</form>
+</div>
+
+<!-- SERVICE FORM -->
+<div class="container">
+<h2>Service Request Form</h2>
+
+<form>
+
+<label>Customer Name</label>
+<input type="text" placeholder="Enter name" required>
+
+<label>Contact Number</label>
+<input type="tel" placeholder="10 digit number" pattern="[0-9]{10}" required>
+
+<label>Issue Type</label>
+<select required>
+<option value="">Select</option>
+<option>Laptop Repair</option>
+<option>Internet Issue</option>
+<option>Software Problem</option>
+</select>
+
+<label>Description</label>
+<textarea placeholder="Describe issue" required></textarea>
+
+<label>Priority</label><br>
+<input type="radio" name="priority" class="inline" required> Low
+<input type="radio" name="priority" class="inline"> Medium
+<input type="radio" name="priority" class="inline"> High
+
+<br><br>
+
+<button type="submit">Submit</button>
+
+</form>
+</div>
+
+</body>
+</html>
