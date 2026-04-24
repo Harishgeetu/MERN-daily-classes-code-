@@ -1,0 +1,66 @@
+css
+-----------
+->css stands for cascading style sheet used to apply stylings , layouts , animinations to the web page 
+->css are introduced in the year 1994 by the developer "hakon wiumlie"
+->the present version of css in css3
+
+
+methods to apply stylings to web page :
+------------------------------
+1.inline css/ inline css
+->applying styling by taking 'style attribute' in HTML
+->the styling is applicable for only that element 
+->for inline css not required css selectors 
+-> we can take the same key two times 
+ex:background-color twice it will take the last one which we have taken at last not the first one 
+->inline stylings is more priority then internal & external css 
+
+2.internal css/ internal stylings
+->applying stylings by taking <style> </style> tag in head part 
+->to apply internal css we need css selectors 
+
+3.external css / external stylings
+->apply styling by taking by new.css file and link html file by using <link> tag
+->to apply external css we need css selectors
+
+css selectors:
+-> css selectors are used to target html elements to apply stylings
+->css selectors are present anly in internal and external css 
+
+types of css selectors:
+----------------- 
+1.simple selectors 
+    a.id selector(#)
+    b.class selector(.)
+    c.tag selector
+    d.grouping selector(,)
+    e.universal selector(*)
+
+2.combinator selectors
+---------------------------------
+a.descendent selector (space)
+b.child selector (>)
+c.adjacent slibling selector(+)
+d.general slibling selector (~)
+
+3.pseudo class selectors
+-----------------------------------
+a.structural pseudo class selector 
+types:
+1.:first-child
+1.:last-child
+1.:
+1.:first child
+1.:first child
+1.:first child
+
+
+
+
+b.dynamic pseudo class selector 
+
+
+
+
+4.pseudo elements selectors 
+5.attribute selectors 

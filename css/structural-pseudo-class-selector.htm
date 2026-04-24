@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structural Pseudo-Class Selector</title>
+    <style>
+        /* Example structural selectors */
+        li:nth-child(2n) {
+            color: red;
+            background-color: cyan;
+        }
+        button:last-child {
+            background-color: cyan;
+            color: red;
+        }
+        button:last-of-type {
+            background-color: red;
+            color: cyan;
+        }
+        li:nth-child(odd) {
+            background-color: yellow;
+            color: blue;
+        }
+        li:nth-child(2),
+        li:nth-child(4),
+        li:nth-child(6) {
+            color: red;
+            background-color: cyan;
+            text-align: center;
+            box-shadow: 5px 5px 5px cyan;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-decoration: underline dotted red;
+            margin: 30px;
+            padding: 30px;
+        }
+
+        a:link,
+        a:visited {
+            color: red;
+        }
+
+        a:active,
+        a:hover {
+            color: cyan;
+            font-size: 25px;
+        }
+
+        div {
+            background-color: red;
+            color: cyan;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-decoration: underline dotted red;
+            margin: 30px;
+            padding: 30px;
+        }
+
+        div:hover {
+            background-color: cyan;
+            color: red;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+        <li>Third item</li>
+        <li>Third item</li>
+        <li>Third item</li>
+    </ol>
+    <div>
+        <button>Click me</button>
+        <button>Click me</button>
+        <button>Click me</button>
+    </div>
+</body>
+</html>
