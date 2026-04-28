@@ -169,11 +169,59 @@ ex:<h1 align="center" id="heading">  hello </h1>
    5.border-radius-shf   
 
 
-flex properties:
-grid properties:
-position properties:
-animinations:
-media queries:
-
-
     3.margin
+    ====================================
+    1.margin-top
+    2.margin-bottom
+    3.margin-left
+    4.margin-right
+    5.margin(short hand form)
+
+
+flex properties:
+1.display:flex;
+2.flex-direction
+3.flx-warp
+4.justify-content
+5.aligin-items
+6.flex-grow
+7.flex-shrink
+8.flex
+
+
+grid properties:
+-------------------------
+1.display:grid
+2.grid-template-columns
+3.grid-template-rows
+4.row-gap
+5.column-gap
+6.grid-row-start
+7.grid-row-end
+8.grid-column-start
+9.grid-column-end
+
+
+position properties:
+-----------------------------------------
+position:relative, absolute, fixed,stricky
+left
+right
+top
+bottom
+
+animinations:
+    1.define animination using @keyframes
+    2.link
+
+media queries:
+----------------------------------
+media queries are used to build reponsive web page based on device width(device view port)
+   -> break points
+   1.smaller devices (mobile with brands) 0px-450px
+   2.media devices (tables/ipad) 450px - 850px
+   3.large devices (laptops ) 850px-1200px
+   4.X-large devices(digital screen) >1200px
+
+@media screen min-width & max-width
+
