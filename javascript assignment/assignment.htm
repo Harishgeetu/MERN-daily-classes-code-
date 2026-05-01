@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Result Table</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f2f2f2;
+      text-align: center;
+    }
+
+    .container {
+      width: 90%;
+      margin: auto;
+      margin-top: 30px;
+    }
+
+    input {
+      padding: 8px;
+      margin: 5px;
+      width: 120px;
+    }
+
+    button {
+      padding: 8px 15px;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      background: white;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid black;
+    }
+
+    th {
+      background: #333;
+      color: white;
+    }
+
+    .green { background: #8fbc8f; }
+    .yellow { background: #ffff99; }
+    .orange { background: #ffcc99; }
+    .red { background: #ff9999; }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Student Result Table</h2>
+
+  <!-- INPUT FORM -->
+  <input type="text" id="name" placeholder="Name">
+  <input type="text" id="roll" placeholder="Roll No">
+  <input type="number" id="s1" placeholder="Sub1">
+  <input type="number" id="s2" placeholder="Sub2">
+  <input type="number" id="s3" placeholder="Sub3">
+  <input type="number" id="s4" placeholder="Sub4">
+
+  <br>
+  <button onclick="addStudent()">Add Student</button>
+
+  <!-- TABLE -->
+  <table id="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Roll No</th>
+        <th>Sub1</th>
+        <th>Sub2</th>
+        <th>Sub3</th>
+        <th>Sub4</th>
+        <th>Total</th>
+        <th>Percentage</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</div>
+
+<script>
+  let students = [];
+
+  function addStudent() {
+    let name = document.getElementById("name").value;
+    let roll = document.getElementById("roll").value;
+    let s1 = +document.getElementById("s1").value;
+    let s2 = +document.getElementById("s2").value;
+    let s3 = +document.getElementById("s3").value;
+    let s4 = +document.getElementById("s4").value;
+
+    if (!name || !roll || !s1 || !s2 || !s3 || !s4) {
+      alert("All fields required");
+      return;
+    }
+
+    let total = s1 + s2 + s3 + s4;
+    let percent = total / 4;
+
+    let student = { name, roll, s1, s2, s3, s4, total, percent };
+    students.push(student);
+
+    displayTable();
+  }
+
+  function displayTable() {
+    let tbody = document.getElementById("tbody");
+    tbody.innerHTML = "";
+
+    students.forEach((stu, index) => {
+      let row = document.createElement("tr");
+
+      // COLOR CONDITION
+      if (stu.percent >= 85) row.className = "green";
+      else if (stu.percent >= 65) row.className = "yellow";
+      else if (stu.percent >= 55) row.className = "orange";
+      else row.className = "red";
+
+      row.innerHTML = `
+        <td>${stu.name}</td>
+        <td>${stu.roll}</td>
+        <td>${stu.s1}</td>
+        <td>${stu.s2}</td>
+        <td>${stu.s3}</td>
+        <td>${stu.s4}</td>
+        <td>${stu.total}</td>
+        <td>${stu.percent.toFixed(2)}%</td>
+        <td>
+          <button onclick="editStudent(${index})">Edit</button>
+          <button onclick="deleteStudent(${index})">Delete</button>
+        </td>
+      `;
+
+      tbody.appendChild(row);
+    });
+  }
+
+  function deleteStudent(index) {
+    students.splice(index, 1);
+    displayTable();
+  }
+
+  function editStudent(index) {
+    let stu = students[index];
+
+    document.getElementById("name").value = stu.name;
+    document.getElementById("roll").value = stu.roll;
+    document.getElementById("s1").value = stu.s1;
+    document.getElementById("s2").value = stu.s2;
+    document.getElementById("s3").value = stu.s3;
+    document.getElementById("s4").value = stu.s4;
+
+    deleteStudent(index);
+  }
+</script>
+
+</body>
+</html>
