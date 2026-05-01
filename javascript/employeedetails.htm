@@ -4,30 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        tbody tr:nth-child(odd){
+            background-color: grey;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input{
+            margin-bottom: 40px;
+        }
+    </style>
 </head>
 <body>
-    <thead>
-        <tr>
-            <td>name</td>
-            <td>role</td>
-            <td>salary</td>
-            <td>address</td>
-            <td>phone no</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </thead>
+    <h1>Emp Details</h1>
+    <input type="search" id="input" placeholder="Search Employee's">
+
+    <table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr bgcolor="orange">
+                <th>Name</th>
+                <th>Role</th>
+                <th>Salary</th>
+                <th>Address</th>
+                <th>Phone No</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ravi</td>
+                <td>developer</td>
+                <td>95200</td>
+                <td>guntur</td>
+                <td>9874561230</td>
+            </tr>
+            <tr>
+                <td>teja</td>
+                <td>test engineer</td>
+                <td>56200</td>
+                <td>vijayawada</td>
+                <td>7894561230</td>
+            </tr>
+            <tr>
+                <td>Vivek</td>
+                <td>RPA Developer</td>
+                <td>86523</td>
+                <td>hyderabad</td>
+                <td>8974561230</td>
+            </tr>
+              <tr>
+                <td>teja</td>
+                <td>test engineer</td>
+                <td>56200</td>
+                <td>vijayawada</td>
+                <td>7894561230</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Nostrum, pariatur placeat quasi omnis et explicabo vitae amet! Similique veritatis omnis magni exercitationem magnam dicta architecto minima a quidem, reprehenderit perferendis?</p>
+   
+        <button onclick="disappearparagraph()">click here</button>
+   
+   
+   
+   <script>
+
+function disappearparagraph(){
+    let para =document.querySelector("p");
+    para.style.display=(para.style.display=="block")? "none": "block"
+}
+
+        let rows=document.querySelectorAll("tbody tr")
+        let input=document.querySelector("input");
+input.addEventListener('keyup',()=>{
+    let inputText=input.value.toLowerCase()
+    rows.forEach((row)=>{
+        let rowData=row.textContent;
+        let result=rowData.toLowerCase().includes(inputText);
+        // console.log(result);
+        row.style.display=result ? " " : "none"
+        
+    })
+    
+})
+
+
+    </script>
+
+
+
+
+
+
+
+
 </body>
 </html>

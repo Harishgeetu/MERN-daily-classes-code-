@@ -174,7 +174,65 @@ objects:
 
     dom(Document object model):
     --------------------------------------
+DOM Stands for Document Object Model 
+
+The DOM serves as a bridge between web pages and scripting languages like JavaScript, making it possible to create dynamic, interactive web applications.
+
+Why We need the Document Object Model (DOM) in JavaScript.?
+
+- If We want to manipulate html , css we need DOM
+- To add dynamic behavior to web page or web application we need DOM
+- To add functionality to the web page
+- Event Handling the DOM enables JavaScript to respond to user actions (like clicks, keypresses, etc.) by attaching event listeners to HTML elements
+- If we want to fetch data from server we need DOM
+
+loops:
+--------------------------------
+loops are use to literate the statements noof times until condition become satisified 
+
+  1.for loop
+     syntax:
+          for(initialization;condition;increment/decrement);
+  2.while loop
+      syntax:
+          while(condition){
+            increment/decrement;
+          }
+  3.do while loop
+       syntax:
+          do{
+            increment/decrement;
+          }while(condition)
+  
+  4.for-in loop
+   for in loop is used to  fetch only index values
+
+   syntax:
+      for(variable in string/array){
+
+      }
 
 
+  5.for-of loop
+   ->for of loop is used to iterate strings,array-
+   ->for of loop is used to fetch only values
 
+   syntax:
+   for(variable of string/arrays){
+
+   }
+
+  6.forEach loop
+  ->foreach() is the higher order function used to iterate arrays 
+    syntax:
+     Arr.forEach((value,index,array)=>{
+        
+     })
+
+
+array inbuilt methods:
+-----------------------------
+1.map()
+2.filter()
+3.reduce()
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1=[10,20,30,40];
+        let arr2=[
+            50,
+            null,
+            {name:"ravi",role:"developer"},
+            ()=>{
+            console.log("hello");
+            
+        }]
+    
+        let arr3=[...arr1,...arr2, "html","css",true];
+        console.log(arr3);
+        
+        let[a,b,c,d]=arr1;
+       console.log(a);
+       console.log(b);
+       console.log(c);
+       console.log(d);
+       
+       let [e,f,g,h]=arr2
+       h()
+              
+       let user={
+        name:"ravi",
+        phoneno:987654321
+       }
+    let orderdetails={
+        productname:"mobile",
+        price:50000,
+        status:"done"
+
+    }
+
+    let orderhistory={...user,[name]:"hello"};
+    console.log(orderhistory);
+    
+
+
+
+    </script>
+</body>
+</html>
