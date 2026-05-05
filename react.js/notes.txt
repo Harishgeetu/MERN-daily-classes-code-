@@ -1,0 +1,7 @@
+react app
+-------------------------------
+1.using npx(node package execuitable)
+->legausive
+
+2.using npm(node package manager)
+->vite

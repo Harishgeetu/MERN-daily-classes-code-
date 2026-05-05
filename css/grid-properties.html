@@ -5,82 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
+        nav{
+            background-image: linear-gradient(transparent, #a8ff7f);
+           
+        }
+
+        ol{
+            padding: 20px;
             display: flex;
-            justify-content:center;
-            height: 100vh;
-            align-items: center;
+            justify-content: space-evenly;
+            list-style: none;
         }
-        .container{
-            border: 2px solid black;
-            padding: 30px;
-            border-radius: 10px;
+
+        li{
+            background-color: #ecf86d;
+            color: black;
+            padding: 10px 20px;
         }
-        input{
-            width: 400px;
-            padding: 10px ;
-            border-radius: 1px solid black;
+
+        @media screen and (max-width: 450px) {
+            ol{
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            li{
+                margin: 10px 0;
+            }
         }
-        #button-container{
-            margin-top: 30px;
-            display: grid;
-            grid-template-columns: auto auto auto auto;
-            row-gap: 10px;
-            column-gap: 10px;
+
+        @media screen and (min-width: 451px) and (max-width: 768px) {
+           nav{
+                background-image: linear-gradient(goldenrod, red);
+            }
+            li{
+                background-color: #ecf86d;
+                color: black;
+            }
         }
-        #button-container div{
-            border: 2px solid red;
-            text-align: center;
-            padding: 10px;
-            border-radius: 8px;
-        }
-        #button-container div:nth-child(16){
-           background-color: red;
-           grid-row-start: 5;
-           grid-column-start: 4;
-           grid-row-end: 7 ;
-        }
-        #button-container div:nth-child(1){
-            grid-column-start:1 ;
-            grid-column-end:3 ;
-            background-color: aquamarine;
-        }
+            
     </style>
 </head>
 <body>
-    <div class="container">
-        <div>
-            <input type="number" readonly placeholder="0">
-        </div>
-        <div id="button-container">
-                <div>sin</div>
-            <div>cos</div>
-            <div>tan</div>
-            <div>AC</div>
-            <div>int</div>
-            <div>dif</div>
-
-            <div>%</div>
-            <div>9</div>
-            <div>8</div>
-            <div>7</div>
-            <div>*</div>
-
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-            <div>-</div>
-
-            <div>+</div>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-
-            <div>0</div>
-            <div>=</div>
-            <div>/</div>
-                
-            </div>
-    </div>
+    <nav>
+        <ol>
+            <li>Home</li>
+            <li>About</li>
+            <li>Help</li>
+            <li>Contact</li>
+            <li>Login</li>
+        </ol>
+    </nav>
 </body>
 </html>
