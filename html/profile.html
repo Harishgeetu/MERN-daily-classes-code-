@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Card</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #f2f2f2;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Outer rounded box */
+    .outer-box {
+        border: 3px solid black;
+        border-radius: 40px;
+        padding: 30px;
+    }
+
+    /* Inner box */
+    .inner-box {
+        border: 2px solid black;
+        border-radius: 20px;
+        padding: 40px 60px;
+        text-align: center;
+        background: white;
+    }
+
+    /* Top rectangle (red box) */
+    .top-box {
+        display: none;
+    }
+
+
+    p {
+        margin: 8px 0;
+        font-size: 18px;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="outer-box">
+    <div class="inner-box">
+        <div class="top-box"></div>
+        
+        <img src="images.jpg" alt="Profile Image" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 20px;">
+
+        <p>Your Name:</p>
+        <p>Roll Number:</p>
+        <p>College Name:</p>
+        <p>LinkedIn profile: url</p>
+        <p>GitHub profile: url</p>
+    </div>
+</div>
+
+</body>
+</html>

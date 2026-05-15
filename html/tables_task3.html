@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seminar Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        /* Header and Side colors (Greenish) */
+        th, .header-bg {
+            background-color: #e2efda;
+        }
+        /* Topic column colors (Light Blue) */
+        .topic-bg {
+            background-color: #deeaf6;
+        }
+        .text-blue {
+            color: #0070c0;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="4">Seminar</th>
+        </tr>
+        <tr>
+            <th rowspan="2">Day</th>
+            <th colspan="2">Schedule</th>
+            <th rowspan="2">Topic</th>
+        </tr>
+        <tr>
+            <th>Begin</th>
+            <th>End</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Monday Row -->
+        <tr>
+            <td class="header-bg">Monday</td>
+            <td class="header-bg">8:00 a.m.</td>
+            <td class="header-bg">5:00 p.m.</td>
+            <td class="topic-bg text-blue">Introduction to XML<br>Validity: DTD and Relax NG</td>
+        </tr>
+        <!-- Tuesday Rows -->
+        <tr>
+            <td class="header-bg" rowspan="3">Tuesday</td>
+            <td class="header-bg">8:00 a.m.</td>
+            <td class="header-bg">11:00 a.m.</td>
+            <td class="topic-bg text-blue">XPath</td>
+        </tr>
+        <tr>
+            <td class="header-bg">11:00 a.m.</td>
+            <td class="header-bg">2:00 p.m.</td>
+            <td class="topic-bg text-blue" rowspan="2">XSL Transformations</td>
+        </tr>
+        <tr>
+            <td class="header-bg">2:00 p.m.</td>
+            <td class="header-bg">5:00 p.m.</td>
+        </tr>
+        <!-- Wednesday Row -->
+        <tr>
+            <td class="header-bg">Wednesday</td>
+            <td class="header-bg">8:00 a.m.</td>
+            <td class="header-bg">12:00 p.m.</td>
+            <td class="topic-bg text-blue">XSL Formatting Objects</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

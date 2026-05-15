@@ -1,0 +1,12 @@
+@import url(style2.css);
+
+form{
+    padding: 50px;
+} 
+
+fieldset{
+    border-radius: 20px;
+    background-color: lightpink;
+    padding: 30px;
+}
+

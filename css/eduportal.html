@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>EduPortal</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4f8ff;
+color:#222;
+}
+
+/* Navbar */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+background:#0d47a1;
+color:white;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-weight:bold;
+transition:.3s;
+}
+
+nav ul li a:hover{
+color:#ffd54f;
+}
+
+/* Hero */
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:80px 8%;
+background:linear-gradient(to right,#1565c0,#42a5f5);
+color:white;
+flex-wrap:wrap;
+}
+
+.hero-text{
+max-width:550px;
+}
+
+.hero-text h1{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.hero-text p{
+font-size:20px;
+line-height:1.6;
+margin-bottom:25px;
+}
+
+.btn{
+background:#ffca28;
+padding:14px 30px;
+border:none;
+border-radius:30px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero img{
+width:450px;
+max-width:100%;
+}
+
+/* Section title */
+.section-title{
+text-align:center;
+font-size:38px;
+margin:70px 0 40px;
+color:#0d47a1;
+}
+
+/* Categories */
+.categories{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+padding:0 8%;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 5px 18px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+color:#1565c0;
+margin-bottom:15px;
+}
+
+/* Dashboard */
+.dashboard{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+padding:0 8%;
+}
+
+.progress-box{
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.progress{
+height:15px;
+background:#ddd;
+border-radius:20px;
+margin-top:15px;
+}
+
+.fill{
+height:100%;
+border-radius:20px;
+background:#42a5f5;
+}
+
+/* Courses */
+.courses{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:35px;
+padding:0 8%;
+}
+
+.course-card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.course-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.course-content{
+padding:20px;
+}
+
+.course-content h3{
+color:#0d47a1;
+margin-bottom:10px;
+}
+
+/* Leaderboard */
+table{
+width:85%;
+margin:auto;
+border-collapse:collapse;
+background:white;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+border-radius:15px;
+overflow:hidden;
+}
+
+th{
+background:#1565c0;
+color:white;
+padding:18px;
+}
+
+td{
+padding:15px;
+text-align:center;
+border-bottom:1px solid #ddd;
+}
+
+/* Profile */
+.profile{
+display:flex;
+justify-content:center;
+padding:40px;
+}
+
+.profile-box{
+background:white;
+padding:40px;
+border-radius:25px;
+text-align:center;
+width:400px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.profile-box img{
+width:130px;
+height:130px;
+border-radius:50%;
+margin-bottom:20px;
+}
+
+/* Contact */
+.contact{
+width:70%;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+input,textarea{
+width:100%;
+padding:14px;
+margin:12px 0;
+border:1px solid #ccc;
+border-radius:10px;
+}
+
+textarea{
+height:120px;
+}
+
+button{
+background:#1565c0;
+color:white;
+padding:14px 30px;
+border:none;
+border-radius:30px;
+}
+
+/* Footer */
+footer{
+margin-top:80px;
+background:#0d47a1;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+.hero{
+text-align:center;
+}
+
+.hero-text h1{
+font-size:40px;
+}
+
+nav{
+flex-direction:column;
+gap:15px;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+}
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+<div class="logo">EduPortal</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Courses</a></li>
+<li><a href="#">Dashboard</a></li>
+<li><a href="#">Quiz</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+<div class="hero-text">
+<h1>Learn Without Limits</h1>
+<p>Explore premium courses in Web Development,
+AI and Data Science. Track progress and become
+a top learner.</p>
+
+<button class="btn">Start Learning</button>
+</div>
+
+<img src="https://cdn.pixabay.com/photo/2016/11/14/04/08/business-1822459_1280.jpg">
+</section>
+
+<!-- Categories -->
+<h2 class="section-title">Course Categories</h2>
+
+<section class="categories">
+
+<div class="card">
+<h3>Web Development</h3>
+<p>HTML, CSS, JavaScript, React and more.</p>
+</div>
+
+<div class="card">
+<h3>Artificial Intelligence</h3>
+<p>Machine Learning and AI Fundamentals.</p>
+</div>
+
+<div class="card">
+<h3>Data Science</h3>
+<p>Python, Analytics and Visualization.</p>
+</div>
+
+</section>
+
+<!-- Dashboard -->
+<h2 class="section-title">Student Dashboard</h2>
+
+<section class="dashboard">
+
+<div class="progress-box">
+<h3>HTML Course</h3>
+<p>Progress: 80%</p>
+<div class="progress">
+<div class="fill" style="width:80%"></div>
+</div>
+</div>
+
+<div class="progress-box">
+<h3>JavaScript</h3>
+<p>Progress: 65%</p>
+<div class="progress">
+<div class="fill" style="width:65%"></div>
+</div>
+</div>
+
+<div class="progress-box">
+<h3>AI Basics</h3>
+<p>Progress: 45%</p>
+<div class="progress">
+<div class="fill" style="width:45%"></div>
+</div>
+</div>
+
+</section>
+
+<!-- Featured Courses -->
+<h2 class="section-title">Featured Courses</h2>
+
+<section class="courses">
+
+<div class="course-card">
+<img src="https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg">
+<div class="course-content">
+<h3>Frontend Mastery</h3>
+<p>Complete modern web development bootcamp.</p>
+</div>
+</div>
+
+<div class="course-card">
+<img src="https://cdn.pixabay.com/photo/2018/03/10/12/00/teamwork-3213924_1280.jpg">
+<div class="course-content">
+<h3>Python for Data Science</h3>
+<p>Learn analytics and machine learning.</p>
+</div>
+</div>
+
+<div class="course-card">
+<img src="https://cdn.pixabay.com/photo/2018/05/08/08/44/artificial-intelligence-3382507_1280.jpg">
+<div class="course-content">
+<h3>AI Fundamentals</h3>
+<p>Start your artificial intelligence journey.</p>
+</div>
+</div>
+
+</section>
+
+<!-- Leaderboard -->
+<h2 class="section-title">Leaderboard</h2>
+
+<table>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Rahul</td>
+<td>98</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Anjali</td>
+<td>95</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Vikram</td>
+<td>91</td>
+</tr>
+
+</table>
+
+<!-- Profile -->
+<h2 class="section-title">Student Profile</h2>
+
+<section class="profile">
+<div class="profile-box">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+
+<h2>Student Name</h2>
+<p>Enrolled Courses: 5</p>
+<p>Completed: 3</p>
+
+</div>
+</section>
+
+<!-- Contact -->
+<h2 class="section-title">Feedback Form</h2>
+
+<section class="contact">
+<form>
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Email">
+
+<textarea placeholder="Feedback"></textarea>
+
+<button>Submit</button>
+
+</form>
+</section>
+
+<footer>
+<p>© 2026 EduPortal | Designed for E-Learning</p>
+</footer>
+
+</body>
+</html>
