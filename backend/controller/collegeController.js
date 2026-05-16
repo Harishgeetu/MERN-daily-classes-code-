@@ -1,5 +1,7 @@
 const Colleges = require("../model/collegemodel");
 
+
+// ADD COLLEGE
 const addCollege = async (req, res) => {
 
     try {
@@ -24,4 +26,53 @@ const addCollege = async (req, res) => {
     }
 };
 
-module.exports = addCollege;
+
+// GET ALL COLLEGES
+const getAllColleges = async (req, res) => {
+
+    try {
+
+        const data = await Colleges.find();
+
+        res.status(200).json(data);
+
+    } 
+    catch(error) {
+
+        res.status(500).json({
+            message: "Failed to fetch colleges"
+        });
+
+    }
+};
+
+
+// DELETE COLLEGE
+const deleteCollege = async (req, res) => {
+
+    try {
+
+        const deletedDocument = await Colleges.findByIdAndDelete(req.params.id);
+
+        res.status(200).json({
+            message: "Record deleted successfully",
+            deletedDocument
+        });
+
+    } 
+    catch(error) {
+
+        res.status(500).json({
+            message: "Failed to delete data",
+            error: error.message
+        });
+
+    }
+};
+const up
+
+module.exports = {
+    addCollege,
+    getAllColleges,
+    deleteCollege
+};
